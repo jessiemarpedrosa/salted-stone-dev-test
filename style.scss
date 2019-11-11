@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+$font-stack: 'Lato', Helvetica, sans-serif;
+$primary-color: #000000;
+
+@mixin breakpoint($class) {
+    @if $class == sm {
+        @media (min-width: 576px) { @content; }
+    }
+
+    @else if $class == md {
+        @media (min-width: 768px) { @content; }
+    }
+
+    @else if $class == lg {
+        @media (min-width: 992px) { @content; }
+    }
+
+    @else if $class == xl {
+        @media (min-width: 1200px) { @content; }
+    }
+
+    @else {
+        @warn "Breakpoint mixin supports: xs, sm, md, lg";
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+
+button{
+    color: #6100E9 !important;
+    font-size: 20px !important;
+}
+
+header#main_head{
+    
+    @include breakpoint(md) {
+        clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+        padding-bottom: 100px;
+    }
+
+    background-color: #6100E9;
+    display: flex;
+    padding-bottom: 60px;
+    
+    .magazine{ 
+        @include breakpoint(sm){
+            width: 75%;
+        }
+        
+        width: 90%;
+        transition: top .3s cubic-bezier(.22,.61,.36,1);
+        top: 0;
+        position: relative;
+    }
+
+    img.magazine:hover {
+        top: -7px;
+        position: relative;
+    }
+    
+    .form_container, .magazine_container{
+        align-self: center;
+
+        .form{
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 7px;
+            box-shadow: 3px 3px 5px -2px #003089;
+        }
+
+        input.form-control{
+            border: 0;
+            border-bottom: 1px solid #939393;
+            border-radius: 0;
+            margin-bottom: 10px;
+            padding-left: 0;;
+        }
+    }
+
+}
+
+.scrolldown_container{
+    display: block;
+    margin: 0 auto;
+    text-align: center;   
+    position: relative;
+    top: -45px;
+
+    img{
+        transition: all .3s ease;
+        
+        &:hover{
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+    }
+}   
+
+.main_content{
+
+    @include breakpoint(sm){
+        background-image: url(images/confetti_right.png), url(images/confetti_left.png);
+        background-position: right bottom, left bottom;
+        background-repeat: no-repeat, no-repeat;
+    }
+    
+    .left_content{
+        p{
+            @include breakpoint(md) {
+                font-size: 18px;
+                line-height: 30px;
+            }
+
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        button{
+            padding-left: 50px !important;
+            background-image: url(images/left_top_arrow.png);
+            background-repeat: no-repeat;
+            background-position: 20px center;
+        }
+    }
+    
+    .testimonial{
+        .headshot{
+            background-color: rgb(255,280,0,0.25);
+            display: inline-block;
+            padding: 12px;
+            border-radius: 9999999px; 
+            margin-bottom: 15px;
+        }
+
+        img{
+            transition: all .3s ease;
+
+            &:hover{
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+            }
+        }
+
+        p{
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+
+}
+
+.clearfix.bottom{
+    background-image: url(images/confetti_mobile_bottom.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 70%;
+
+    @include breakpoint(sm){
+        background: none;
+    }
+}
+
+footer{
+    background-color: black;
+    padding: 30px 0;
+    text-align: center;
+
+    p{
+        color: white;
+    }
+}

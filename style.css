@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 100% "Lato", Helvetica, sans-serif;
+  color: #000000;
+}
+
+button {
+  color: #6100E9 !important;
+  font-size: 20px !important;
+}
+
+header#main_head {
+  background-color: #6100E9;
+  display: flex;
+  padding-bottom: 60px;
+}
+@media (min-width: 768px) {
+  header#main_head {
+    clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+    padding-bottom: 100px;
+  }
+}
+header#main_head .magazine {
+  width: 90%;
+  transition: top 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  top: 0;
+  position: relative;
+}
+@media (min-width: 576px) {
+  header#main_head .magazine {
+    width: 75%;
+  }
+}
+header#main_head img.magazine:hover {
+  top: -7px;
+  position: relative;
+}
+header#main_head .form_container, header#main_head .magazine_container {
+  align-self: center;
+}
+header#main_head .form_container .form, header#main_head .magazine_container .form {
+  width: 80%;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 7px;
+  box-shadow: 3px 3px 5px -2px #003089;
+}
+header#main_head .form_container input.form-control, header#main_head .magazine_container input.form-control {
+  border: 0;
+  border-bottom: 1px solid #939393;
+  border-radius: 0;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+
+.scrolldown_container {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: -45px;
+}
+.scrolldown_container img {
+  transition: all 0.3s ease;
+}
+.scrolldown_container img:hover {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+@media (min-width: 576px) {
+  .main_content {
+    background-image: url(images/confetti_right.png), url(images/confetti_left.png);
+    background-position: right bottom, left bottom;
+    background-repeat: no-repeat, no-repeat;
+  }
+}
+.main_content .left_content p {
+  font-size: 16px;
+  line-height: 24px;
+}
+@media (min-width: 768px) {
+  .main_content .left_content p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+.main_content .left_content button {
+  padding-left: 50px !important;
+  background-image: url(images/left_top_arrow.png);
+  background-repeat: no-repeat;
+  background-position: 20px center;
+}
+.main_content .testimonial .headshot {
+  background-color: rgba(255, 255, 0, 0.25);
+  display: inline-block;
+  padding: 12px;
+  border-radius: 9999999px;
+  margin-bottom: 15px;
+}
+.main_content .testimonial img {
+  transition: all 0.3s ease;
+}
+.main_content .testimonial img:hover {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.main_content .testimonial p {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.clearfix.bottom {
+  background-image: url(images/confetti_mobile_bottom.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 70%;
+}
+@media (min-width: 576px) {
+  .clearfix.bottom {
+    background: none;
+  }
+}
+
+footer {
+  background-color: black;
+  padding: 30px 0;
+  text-align: center;
+}
+footer p {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
