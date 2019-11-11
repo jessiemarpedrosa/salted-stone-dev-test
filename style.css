@@ -43,12 +43,17 @@ header#main_head .form_container, header#main_head .magazine_container {
   align-self: center;
 }
 header#main_head .form_container .form, header#main_head .magazine_container .form {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   background: white;
   padding: 30px;
   border-radius: 7px;
   box-shadow: 3px 3px 5px -2px #003089;
+}
+@media (min-width: 768px) {
+  header#main_head .form_container .form, header#main_head .magazine_container .form {
+    width: 80%;
+  }
 }
 header#main_head .form_container input.form-control, header#main_head .magazine_container input.form-control {
   border: 0;

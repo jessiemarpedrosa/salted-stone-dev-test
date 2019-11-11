@@ -69,8 +69,12 @@ header#main_head{
     .form_container, .magazine_container{
         align-self: center;
 
-        .form{
-            width: 80%;
+        .form{    
+            @include breakpoint(md){
+                width: 80%;
+            }
+
+            width: 85%;
             margin: 0 auto;
             background: white;
             padding: 30px;
